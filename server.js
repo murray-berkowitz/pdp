@@ -1,5 +1,10 @@
 const server = require('./app')
-const port = process.env.PORT || 2020
 const chalk = require('chalk')
+const db = require('./db')
 
-server.listen(port, () => console.log(chalk.magenta(`listening on port ${port}`)))
+const port = process.env.PORT || 2020
+
+db.sync({force: true})
+.then(() => {
+    server.listen(port, () => console.log(chalk.magenta(`listening on port ${port}`)))
+})
