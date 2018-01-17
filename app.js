@@ -10,6 +10,6 @@ app.use(require('morgan')('dev'))  // Used for detailed logging all requests
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
-app.get('/', (req, res, next) => res.sendFile(path.join(__dirname, '/src/index.html')))
+app.get('/*', (req, res, next) => res.sendFile(path.join(__dirname, '/src/index.html')))
 
 module.exports = app

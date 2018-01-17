@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
+import Routes from './routes'
 
-export default class App extends Component {
-    render(){
-        return (
-            <h1 className='test'>Welcome</h1>
-        )
-    }
+const App = () => {
+    return (
+        <Routes />
+    )
 }
+
+export default App
